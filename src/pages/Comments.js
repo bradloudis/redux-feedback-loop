@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Comments extends Component {
   state = {
@@ -16,6 +17,10 @@ class Comments extends Component {
     );
   };
 
+  onButtonClick = (event) => {
+    this.props.dispatch({ type: 'UPDATE_COMMENTS', payload: this.state });
+  };
+
   render() {
     return (
       <div>
@@ -24,10 +29,10 @@ class Comments extends Component {
           onChange={this.onCommentChange}
           placeholder="Leave your comments here"
         ></input>
-        <button>DONE!</button>
+        <button onClick={this.onButtonClick}>DONE!</button>
       </div>
     );
   }
 }
 
-export default Comments;
+export default connect()(Comments);
