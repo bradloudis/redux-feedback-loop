@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Feeling extends Component {
   state = {
@@ -7,6 +8,7 @@ class Feeling extends Component {
 
   onButtonClick = (event) => {
     event.preventDefault();
+    this.props.dispatch({ type: 'UPDATE_FEELING', payload: this.state });
     this.props.history.push('/understanding');
   };
 
@@ -79,4 +81,4 @@ class Feeling extends Component {
   }
 }
 
-export default Feeling;
+export default connect()(Feeling);
