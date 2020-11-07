@@ -6,7 +6,7 @@ class Feeling extends Component {
     feeling: '',
   };
 
-  onButtonClick = (event) => {
+  handleFormSubmit = (event) => {
     event.preventDefault();
     this.props.dispatch({ type: 'UPDATE_FEELING', payload: this.state });
     this.props.history.push('/understanding');
@@ -20,7 +20,7 @@ class Feeling extends Component {
 
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleFormSubmit}>
         <div>
           <p>How are you feeling today?</p>
         </div>
@@ -75,7 +75,7 @@ class Feeling extends Component {
           />
           <label>5</label>
         </div>
-        <button onClick={this.onButtonClick}>Next</button>
+        <button>Next</button>
       </form>
     );
   }

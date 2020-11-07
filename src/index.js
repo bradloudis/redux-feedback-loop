@@ -24,7 +24,9 @@ const feedbackReducer = (state = feedbackReducerInitialState, action) => {
   if (action.type === 'UPDATE_FEELING') {
     return { ...state, ...action.payload };
   }
-
+  if (action.type === 'UPDATE_UNDERSTANDING') {
+    return { ...state, ...action.payload };
+  }
   if (action.type === 'UPDATE_COMMENTS') {
     return { ...state, ...action.payload };
   }
