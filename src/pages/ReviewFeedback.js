@@ -1,10 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
 
 class ReviewFeedback extends Component {
   handleSubmitClick = (event) => {
     console.log('submit btn click!');
+    this.saveNewFeedback();
   };
+
+  saveNewFeedback() {
+    axios
+      .post('/feedback', this.props.store.feedbackReducer)
+      .then((response) => {
+        console.log('OK');
+      })
+      .catch((err) => {
+        console.log(err);
+        alert('Your feedback was not saved, please try again!');
+      });
+  }
 
   render() {
     return (
