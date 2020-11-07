@@ -7,14 +7,9 @@ class Comments extends Component {
   };
 
   onCommentChange = (event) => {
-    this.setState(
-      {
-        comments: event.target.value,
-      },
-      () => {
-        console.log(this.state);
-      }
-    );
+    this.setState({
+      comments: event.target.value,
+    });
   };
 
   onButtonClick = (event) => {
