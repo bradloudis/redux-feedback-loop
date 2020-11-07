@@ -1,9 +1,25 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class LandingPage extends Component {
+  state = {
+    feeling: '',
+    understanding: '',
+    support: '',
+    comments: '',
+  };
+
   onButtonClick = (event) => {
     this.props.history.push('/feeling');
   };
+
+  componentDidMount() {
+    this.resetReducer();
+  }
+
+  resetReducer() {
+    this.props.dispatch({ type: 'RESET_REDUCER', payload: this.state });
+  }
 
   render() {
     return (
@@ -15,4 +31,4 @@ class LandingPage extends Component {
   }
 }
 
-export default LandingPage;
+export default connect()(LandingPage);

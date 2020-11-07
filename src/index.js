@@ -33,6 +33,9 @@ const feedbackReducer = (state = feedbackReducerInitialState, action) => {
   if (action.type === 'UPDATE_COMMENTS') {
     return { ...state, ...action.payload };
   }
+  if (action.type === 'RESET_REDUCER') {
+    return action.payload;
+  }
   return state;
 };
 
