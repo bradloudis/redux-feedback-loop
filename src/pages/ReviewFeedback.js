@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class ReviewFeedback extends Component {
+  handleSubmitClick = (event) => {
+    console.log('submit btn click!');
+  };
+
   render() {
     return (
       <div>
@@ -19,6 +23,7 @@ class ReviewFeedback extends Component {
         <p>
           comments: <span>{this.props.store.feedbackReducer.comments}</span>
         </p>
+        <button onClick={this.handleSubmitClick}>SUBMIT</button>
       </div>
     );
   }
