@@ -7,7 +7,7 @@ class Success extends Component {
       <div>
         <p>Your feedback has been successfully submitted!</p>
         <p>
-          <Link to="/feeling">Click here</Link> to start over.
+          <Link to="/">Click here</Link> to start over.
         </p>
       </div>
     );
