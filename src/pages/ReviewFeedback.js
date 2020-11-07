@@ -13,6 +13,7 @@ class ReviewFeedback extends Component {
       .post('/feedback', this.props.store.feedbackReducer)
       .then((response) => {
         console.log('OK');
+        this.props.history.push('/success');
       })
       .catch((err) => {
         console.log(err);
