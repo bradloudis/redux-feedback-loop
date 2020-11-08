@@ -1,19 +1,17 @@
 # FEEDBACK FORM
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
-
 ## Description
 
-_Duration: 2 Weekend Project_
+_Duration: Weekend Project_
 
-Creating a feedback form using the full stack.
+Creating a feedback form using the full stack. The feedback is collected over 4 views. In a separate review page, the feedback information is displayed along with a submit button. Clicking the submit button saves feedback to the database.
 
 ## Screenshot
 
 ## Installation
 
-1. Create a database named `prime_feedback`,
-2. The queries in the `data.sql` file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly. The project is built on [Postgres](https://www.postgresql.org/download/), so you will need to make sure to have that installed. We recommend using Postico to run those queries as that was used to create the queries,
+1. Create a database named `prime_feedback`
+2. The queries in the `data.sql` file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly. The project is built on [Postgres](https://www.postgresql.org/download/), so you will need to make sure to have that installed. We recommend using Postico to run those queries as that was used to create the queries
 3. Open up your editor of choice and run an `npm install`
 4. Run `npm run server` in your terminal
 5. Run `npm run client` in your terminal

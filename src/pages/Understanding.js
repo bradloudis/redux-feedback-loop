@@ -11,8 +11,17 @@ class Understanding extends Component {
 
   handleNextClick = (event) => {
     event.preventDefault();
-    this.props.dispatch({ type: 'UPDATE_UNDERSTANDING', payload: this.state });
-    this.props.history.push('/support');
+    // conditional check to make sure a radio btn has been selected
+    if (this.state.understanding !== '') {
+      this.props.dispatch({
+        type: 'UPDATE_UNDERSTANDING',
+        payload: this.state,
+      });
+      this.props.history.push('/support');
+    } else {
+      // alert user to select a radio btn
+      alert('please fill in da bubble!');
+    }
   };
 
   handleBackClick = (event) => {
@@ -38,7 +47,6 @@ class Understanding extends Component {
           value="1"
           checked={this.state.understanding === '1'}
           onChange={this.handleRadioChange}
-          required
         />
         <label>1</label>
         <input

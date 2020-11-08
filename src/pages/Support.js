@@ -11,8 +11,14 @@ class Support extends Component {
 
   handleNextClick = (event) => {
     event.preventDefault();
-    this.props.dispatch({ type: 'UPDATE_SUPPORT', payload: this.state });
-    this.props.history.push('/comments');
+    // conditional check to make sure a radio btn has been selected
+    if (this.state.support !== '') {
+      this.props.dispatch({ type: 'UPDATE_SUPPORT', payload: this.state });
+      this.props.history.push('/comments');
+    } else {
+      // alert user to select a radio btn
+      alert('please fill in da bubble!');
+    }
   };
 
   handleBackClick = (event) => {
@@ -38,7 +44,6 @@ class Support extends Component {
           value="1"
           checked={this.state.support === '1'}
           onChange={this.handleRadioChange}
-          required
         />
         <label>1</label>
         <input

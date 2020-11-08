@@ -11,8 +11,14 @@ class Feeling extends Component {
 
   handleNextClick = (event) => {
     event.preventDefault();
-    this.props.dispatch({ type: 'UPDATE_FEELING', payload: this.state });
-    this.props.history.push('/understanding');
+    // conditional check to make sure a radio btn has been selected
+    if (this.state.feeling !== '') {
+      this.props.dispatch({ type: 'UPDATE_FEELING', payload: this.state });
+      this.props.history.push('/understanding');
+    } else {
+      // alert user to select a radio btn
+      alert('please fill in da bubble!');
+    }
   };
 
   handleBackClick = (event) => {
@@ -38,7 +44,6 @@ class Feeling extends Component {
           value="1"
           checked={this.state.feeling === '1'}
           onChange={this.handleRadioChange}
-          required
         />
         <label>1</label>
         <input
