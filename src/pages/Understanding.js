@@ -29,6 +29,7 @@ class Understanding extends Component {
     return (
       <form onSubmit={this.handleNextClick}>
         <div>
+          <h2>Understanding</h2>
           <p>How well are you understanding the content?</p>
         </div>
         <input

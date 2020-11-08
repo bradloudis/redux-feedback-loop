@@ -27,7 +27,10 @@ class Comments extends Component {
   render() {
     return (
       <div>
-        <p>Any comments you want to leave?</p>
+        <div>
+          <h2>Comments</h2>
+          <p>Any comments you want to leave?</p>
+        </div>
         <input
           type="text"
           onChange={this.onCommentChange}

@@ -29,6 +29,7 @@ class Feeling extends Component {
     return (
       <form onSubmit={this.handleNextClick}>
         <div>
+          <h2>Feeling</h2>
           <p>How are you feeling today?</p>
         </div>
         <input

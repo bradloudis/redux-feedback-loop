@@ -29,7 +29,10 @@ class ReviewFeedback extends Component {
   render() {
     return (
       <div>
-        <p>Review your feedback and submit!</p>
+        <div>
+          <h2>Review</h2>
+          <p>Review your feedback and submit!</p>
+        </div>
         <p>
           feeling: <span>{this.props.store.feedbackReducer.feeling}</span>
         </p>

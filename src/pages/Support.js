@@ -29,6 +29,7 @@ class Support extends Component {
     return (
       <form onSubmit={this.handleNextClick}>
         <div>
+          <h2>Support</h2>
           <p>How well are you feeling supported?</p>
         </div>
         <input
