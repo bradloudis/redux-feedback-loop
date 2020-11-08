@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+// MATERIAL UI
+import { Button } from '@material-ui/core';
+
 class LandingPage extends Component {
   state = {
     feeling: '',
@@ -25,7 +28,9 @@ class LandingPage extends Component {
     return (
       <div>
         <h2>Click the button to begin submitting feedback!</h2>
-        <button onClick={this.onButtonClick}>START!</button>
+        <Button variant="contained" onClick={this.onButtonClick}>
+          START!
+        </Button>
       </div>
     );
   }

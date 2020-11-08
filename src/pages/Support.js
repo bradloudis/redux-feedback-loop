@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+// MATERIAL UI
+import { Button } from '@material-ui/core';
+
 class Support extends Component {
   state = {
     support: '',
@@ -13,7 +16,7 @@ class Support extends Component {
   };
 
   handleBackClick = (event) => {
-    this.props.history.push('/feeling');
+    this.props.history.push('/understanding');
   };
 
   handleRadioChange = (event) => {
@@ -70,10 +73,12 @@ class Support extends Component {
         />
         <label>5</label>
         <div>
-          <button type="button" onClick={this.handleBackClick}>
+          <Button variant="contained" onClick={this.handleBackClick}>
             BACK
-          </button>
-          <button>NEXT</button>
+          </Button>
+          <Button variant="contained" type="submit">
+            NEXT
+          </Button>
         </div>
       </form>
     );

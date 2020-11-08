@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
+// MATERIAL UI
+import { Button } from '@material-ui/core';
+
 class ReviewFeedback extends Component {
   handleSubmitClick = (event) => {
-    console.log('submit btn click!');
     this.saveNewFeedback();
   };
 
@@ -16,7 +18,6 @@ class ReviewFeedback extends Component {
     axios
       .post('/feedback', this.props.store.feedbackReducer)
       .then((response) => {
-        console.log('OK');
         this.props.history.push('/success');
       })
       .catch((err) => {
@@ -33,7 +34,7 @@ class ReviewFeedback extends Component {
           feeling: <span>{this.props.store.feedbackReducer.feeling}</span>
         </p>
         <p>
-          understanding:
+          understanding:{' '}
           <span>{this.props.store.feedbackReducer.understanding}</span>
         </p>
         <p>
@@ -42,8 +43,12 @@ class ReviewFeedback extends Component {
         <p>
           comments: <span>{this.props.store.feedbackReducer.comments}</span>
         </p>
-        <button onClick={this.handleBackClick}>BACK</button>
-        <button onClick={this.handleSubmitClick}>SUBMIT</button>
+        <Button variant="contained" onClick={this.handleBackClick}>
+          BACK
+        </Button>
+        <Button variant="contained" onClick={this.handleSubmitClick}>
+          SUBMIT
+        </Button>
       </div>
     );
   }

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+// MATERIAL UI
+import { Button } from '@material-ui/core';
+
 class Comments extends Component {
   state = {
     comments: '',
@@ -31,8 +34,12 @@ class Comments extends Component {
           placeholder="Leave your comments here"
         ></input>
         <div>
-          <button onClick={this.handleBackClick}>BACK</button>
-          <button onClick={this.handleNextClick}>NEXT</button>
+          <Button variant="contained" onClick={this.handleBackClick}>
+            BACK
+          </Button>
+          <Button variant="contained" onClick={this.handleNextClick}>
+            NEXT
+          </Button>
         </div>
       </div>
     );
