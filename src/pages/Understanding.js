@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+// SWEET ALERT
+import Swal from 'sweetalert2';
 // MATERIAL UI
 import { Button } from '@material-ui/core';
 
@@ -20,7 +22,12 @@ class Understanding extends Component {
       this.props.history.push('/support');
     } else {
       // alert user to select a radio btn
-      alert('please fill in da bubble!');
+      Swal.fire({
+        title: 'Uh-oh!',
+        text: 'You forgot to choose a number!',
+        icon: 'warning',
+        confirmButtonText: 'Try again!',
+      });
     }
   };
 
