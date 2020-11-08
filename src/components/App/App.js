@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import './App.css';
 import { HashRouter as Router, Route } from 'react-router-dom';
 
+// google font
+import 'fontsource-abel';
+
 // Components
 // ------------------
 import Header from '../Header/Header';

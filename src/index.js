@@ -4,6 +4,9 @@ import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
+// google font
+// import 'fontsource-abel';
+
 // Redux Dependencies
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
