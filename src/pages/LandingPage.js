@@ -25,7 +25,7 @@ class LandingPage extends Component {
     return (
       <div>
         <h2>Click the button to begin submitting feedback!</h2>
-        <button onClick={this.onButtonClick}>Start!</button>
+        <button onClick={this.onButtonClick}>START!</button>
       </div>
     );
   }

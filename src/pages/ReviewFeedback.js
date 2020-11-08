@@ -8,6 +8,10 @@ class ReviewFeedback extends Component {
     this.saveNewFeedback();
   };
 
+  handleBackClick = (event) => {
+    this.props.history.push('/comments');
+  };
+
   saveNewFeedback() {
     axios
       .post('/feedback', this.props.store.feedbackReducer)
@@ -38,6 +42,7 @@ class ReviewFeedback extends Component {
         <p>
           comments: <span>{this.props.store.feedbackReducer.comments}</span>
         </p>
+        <button onClick={this.handleBackClick}>BACK</button>
         <button onClick={this.handleSubmitClick}>SUBMIT</button>
       </div>
     );

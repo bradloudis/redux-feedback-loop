@@ -12,9 +12,13 @@ class Comments extends Component {
     });
   };
 
-  onButtonClick = (event) => {
+  handleNextClick = (event) => {
     this.props.dispatch({ type: 'UPDATE_COMMENTS', payload: this.state });
     this.props.history.push('/review');
+  };
+
+  handleBackClick = (event) => {
+    this.props.history.push('/support');
   };
 
   render() {
@@ -22,10 +26,14 @@ class Comments extends Component {
       <div>
         <p>Any comments you want to leave?</p>
         <input
+          type="text"
           onChange={this.onCommentChange}
           placeholder="Leave your comments here"
         ></input>
-        <button onClick={this.onButtonClick}>DONE!</button>
+        <div>
+          <button onClick={this.handleBackClick}>BACK</button>
+          <button onClick={this.handleNextClick}>NEXT</button>
+        </div>
       </div>
     );
   }
