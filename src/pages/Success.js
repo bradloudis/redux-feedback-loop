@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 // SWEET ALERT
 import Swal from 'sweetalert2';
+
 class Success extends Component {
   componentDidMount() {
     Swal.fire({

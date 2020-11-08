@@ -2,12 +2,24 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
+// SWEET ALERT
+import Swal from 'sweetalert2';
 // MATERIAL UI
 import { Button } from '@material-ui/core';
 
 class ReviewFeedback extends Component {
   handleSubmitClick = (event) => {
-    this.saveNewFeedback();
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'Click the submit button to save your feedback.',
+      icon: 'question',
+      confirmButtonText: `Save`,
+      showCancelButton: true,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.saveNewFeedback();
+      }
+    });
   };
 
   handleBackClick = (event) => {
