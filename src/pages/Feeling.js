@@ -14,6 +14,7 @@ class Feeling extends Component {
   handleNextClick = (event) => {
     event.preventDefault();
     // conditional check to make sure a radio btn has been selected
+    // if selected dispatch local state and direct to next page view
     if (this.state.feeling !== '') {
       this.props.dispatch({ type: 'UPDATE_FEELING', payload: this.state });
       this.props.history.push('/understanding');
@@ -28,10 +29,12 @@ class Feeling extends Component {
     }
   };
 
+  // direct to previous page view
   handleBackClick = (event) => {
     this.props.history.push('/');
   };
 
+  // track which radio btn is selected
   handleRadioChange = (event) => {
     this.setState({
       feeling: event.target.value,

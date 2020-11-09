@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
 import { Button } from '@material-ui/core';
 
 class ReviewFeedback extends Component {
+  // utilizing sweet alert to confirm submission
   handleSubmitClick = (event) => {
     Swal.fire({
       title: 'Are you sure?',
@@ -22,10 +23,13 @@ class ReviewFeedback extends Component {
     });
   };
 
+  // direct to previous page view
   handleBackClick = (event) => {
     this.props.history.push('/comments');
   };
 
+  // AXIOS POST to save feedback in the database
+  // .then directs to next page view
   saveNewFeedback() {
     axios
       .post('/feedback', this.props.store.feedbackReducer)
@@ -34,7 +38,11 @@ class ReviewFeedback extends Component {
       })
       .catch((err) => {
         console.log(err);
-        alert('Your feedback was not saved, please try again!');
+        Swal.fire({
+          title: 'UH-OH!',
+          text: 'There was a problem with the database!',
+          icon: 'error',
+        });
       });
   }
 

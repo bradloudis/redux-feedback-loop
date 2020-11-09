@@ -9,17 +9,20 @@ class Comments extends Component {
     comments: '',
   };
 
+  // tracking text input on local state
   onCommentChange = (event) => {
     this.setState({
       comments: event.target.value,
     });
   };
 
+  // dispatch local state and direct to next page view
   handleNextClick = (event) => {
     this.props.dispatch({ type: 'UPDATE_COMMENTS', payload: this.state });
     this.props.history.push('/review');
   };
 
+  // direct to previous page view
   handleBackClick = (event) => {
     this.props.history.push('/support');
   };

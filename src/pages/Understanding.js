@@ -14,6 +14,7 @@ class Understanding extends Component {
   handleNextClick = (event) => {
     event.preventDefault();
     // conditional check to make sure a radio btn has been selected
+    // if selected dispatch local state and direct to next page view
     if (this.state.understanding !== '') {
       this.props.dispatch({
         type: 'UPDATE_UNDERSTANDING',
@@ -31,10 +32,12 @@ class Understanding extends Component {
     }
   };
 
+  // direct to previous page view
   handleBackClick = (event) => {
     this.props.history.push('/feeling');
   };
 
+  // track which radio btn is selected
   handleRadioChange = (event) => {
     this.setState({
       understanding: event.target.value,

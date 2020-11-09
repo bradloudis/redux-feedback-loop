@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { Button } from '@material-ui/core';
 
 class LandingPage extends Component {
+  // local state default is empty strings for all values
   state = {
     feeling: '',
     understanding: '',
@@ -12,17 +13,20 @@ class LandingPage extends Component {
     comments: '',
   };
 
-  onButtonClick = (event) => {
-    this.props.history.push('/feeling');
-  };
-
+  // page load
   componentDidMount() {
     this.resetReducer();
   }
 
+  // dispatch local state to reset global state
   resetReducer() {
     this.props.dispatch({ type: 'RESET_REDUCER', payload: this.state });
   }
+
+  // direct to next page view
+  onButtonClick = (event) => {
+    this.props.history.push('/feeling');
+  };
 
   render() {
     return (

@@ -14,6 +14,7 @@ class Support extends Component {
   handleNextClick = (event) => {
     event.preventDefault();
     // conditional check to make sure a radio btn has been selected
+    // if selected dispatch local state and direct to next page view
     if (this.state.support !== '') {
       this.props.dispatch({ type: 'UPDATE_SUPPORT', payload: this.state });
       this.props.history.push('/comments');
@@ -28,10 +29,12 @@ class Support extends Component {
     }
   };
 
+  // direct to previous page view
   handleBackClick = (event) => {
     this.props.history.push('/understanding');
   };
 
+  // track which radio btn is selected
   handleRadioChange = (event) => {
     this.setState({
       support: event.target.value,

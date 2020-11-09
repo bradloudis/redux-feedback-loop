@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 class Success extends Component {
+  // sweet alert - success!
   componentDidMount() {
     Swal.fire({
       title: 'Success!',

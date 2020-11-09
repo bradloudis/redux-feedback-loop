@@ -14,7 +14,6 @@ import logger from 'redux-logger';
 
 // Redux Reducers
 // --------------------------
-
 const feedbackReducerInitialState = {
   feeling: '',
   understanding: '',
@@ -23,7 +22,7 @@ const feedbackReducerInitialState = {
 };
 
 const feedbackReducer = (state = feedbackReducerInitialState, action) => {
-  // set up different action.type conditional checks that utilize spread to update individual key/value pairs on initial state
+  // different action.type conditional checks that utilize spread to update individual key/value pairs on initial state
   if (action.type === 'UPDATE_FEELING') {
     return { ...state, ...action.payload };
   }
