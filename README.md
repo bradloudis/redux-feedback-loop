@@ -8,6 +8,10 @@ Creating a feedback form using the full stack. The feedback is collected over 4 
 
 ## Screenshot
 
+<img width="648" alt="Screen Shot 2020-11-08 at 6 25 00 PM" src="https://user-images.githubusercontent.com/69406122/98488601-d175f100-21ef-11eb-8518-97c66df493bd.png">
+
+<img width="633" alt="Screen Shot 2020-11-08 at 6 24 28 PM" src="https://user-images.githubusercontent.com/69406122/98488610-dfc40d00-21ef-11eb-9280-a7f1c7c53d89.png">
+
 ## Installation
 
 1. Create a database named `prime_feedback`

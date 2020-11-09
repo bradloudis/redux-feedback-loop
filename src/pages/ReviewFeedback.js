@@ -14,7 +14,7 @@ class ReviewFeedback extends Component {
       title: 'Are you sure?',
       text: 'Click the submit button to save your feedback.',
       icon: 'question',
-      confirmButtonText: `Save`,
+      confirmButtonText: `SUBMIT`,
       showCancelButton: true,
     }).then((result) => {
       if (result.isConfirmed) {
